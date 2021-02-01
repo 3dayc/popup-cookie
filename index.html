@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script language="Javascript">
+
+        function setCookie( name, value, expirehours ) {  
+            var todayDate = new Date(); 
+            todayDate.setHours( todayDate.getHours() + expirehours ); 
+            document.cookie = name + "=" +escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
+        }
+         
+        function todaycloseWin() { 
+            setCookie( "hCookie","done",24);
+            document.getElementById('pop_03').style.visibility = "hidden";
+        }
+        
+        </script>
+         
+         <div id="pop_03" style="position:absolute; z-index:9999; visibility:done; margin-top:100px;">
+            <div>
+                <!-- <img src="../css/img/popup/psj_pop_up.gif"  width="350" border="0" alt="" /> -->
+                <a href="#" onclick="todaycloseWin()">오늘하루동안 열지않기</a>
+            </div>
+        </div>
+        
+        <script language="Javascript"> 
+        cookiedata = document.cookie;
+        console.log(cookiedata);
+        if ( cookiedata.indexOf("hCookie=done") < 0 ){    
+            document.getElementById('pop_03').style.visibility = "visible"; 
+        }else{ 
+            document.getElementById('pop_03').style.visibility = "hidden"; 
+        } 
+        </script>
+        Colored by Color Scripter
+</body>
+</html>
