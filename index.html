@@ -8,13 +8,13 @@
 <body>
     <script language="Javascript">
 
-        function setCookie( name, value, expirehours ) {  
-            var todayDate = new Date(); 
-            todayDate.setHours( todayDate.getHours() + expirehours ); 
-            document.cookie = name + "=" +escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
+        function setCookie( name, value, expirehours ) {
+            var todayDate = new Date();
+            todayDate.setHours( todayDate.getHours() + expirehours );
+            document.cookie = name + "=" +escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
         }
          
-        function todaycloseWin() { 
+        function todaycloseWin() {
             setCookie( "hCookie","done",24);
             document.getElementById('pop_03').style.visibility = "hidden";
         }
@@ -28,15 +28,15 @@
             </div>
         </div>
         
-        <script language="Javascript"> 
+        <script language="Javascript">
         cookiedata = document.cookie;
         console.log(cookiedata);
-        if ( cookiedata.indexOf("hCookie=done") < 0 ){    
-            document.getElementById('pop_03').style.visibility = "visible"; 
-        }else{ 
-            document.getElementById('pop_03').style.visibility = "hidden"; 
-        } 
-        </script>
-        Colored by Color Scripter
+        if ( cookiedata.indexOf("hCookie=done") < 0 ){
+            document.getElementById('pop_03').style.visibility = "visible";
+        }else{
+            document.getElementById('pop_03').style.visibility = "hidden";
+        }
+    </script>
+    Colored by Color Scripter
 </body>
 </html>
